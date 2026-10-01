@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Завдання 1 - Привітання</title>
+</head>
+<body>
+  <script>
+    function getFullName(firstName, lastName) {
+      return `${firstName} ${lastName}`;
+    }
+
+    function showGreeting(fullName, age) {
+      alert(`Hello, ${fullName}! You are ${age} years old.`);
+    }
+
+    let fName = prompt("Введіть ім'я:");
+    let lName = prompt("Введіть прізвище:");
+    let userAge = prompt("Введіть вік:");
+
+    let full = getFullName(fName, lName);
+    showGreeting(full, userAge);
+  </script>
+</body>
+</html>
