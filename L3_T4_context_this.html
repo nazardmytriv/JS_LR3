@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Завдання 4 - Контекст this</title>
+</head>
+<body>
+  <button id="hello">Say</button>
+  <p id="explanation"></p>
+
+  <script>
+    let userName = prompt("Введіть ваше ім'я:");
+
+    const user = {
+      name: userName,
+      say() { 
+        alert(`Hello, ${this.name}`); 
+      }
+    };
+
+    const btn = document.getElementById("hello");
+
+    
+    btn.addEventListener('click', user.say.bind(user));
+
+    document.getElementById("explanation").innerHTML = 
+      "<strong>Пояснення:</strong> При передачі методу об'єкта як обробника події (наприклад, для кліку на кнопку), контекст <code>this</code> втрачається і починає вказувати на елемент DOM (саму кнопку). Щоб метод <code>say()</code> знав, що <code>this</code> — це об'єкт <code>user</code>, ми використовуємо метод <code>.bind(user)</code>.";
+  </script>
+</body>
+</html>
