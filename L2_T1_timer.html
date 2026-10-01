@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Завдання 1 - Таймер</title>
+</head>
+<body>
+  <p>Зачекайте декілька секунд після вводу...</p>
+  <script>
+    function startGreetingTimer(message, seconds, callback) {
+      console.log(`Таймер запущено на ${seconds} секунд...`);
+      setTimeout(() => {
+        alert(message);
+        callback();
+      }, seconds * 1000);
+    }
+
+    let msg = prompt("Введіть повідомлення:");
+    let sec = Number(prompt("Через скільки секунд показати?"));
+
+    // Передаємо стрілкову функцію як колбек
+    startGreetingTimer(msg, sec, () => alert('Time is up!'));
+  </script>
+</body>
+</html>
