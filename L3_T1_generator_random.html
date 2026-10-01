@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Завдання 1 - Генератор чисел</title>
+</head>
+<body>
+  <button id="next">Next number</button>
+  <div id="out"></div>
+
+  <script>
+    function* randomGenerator(min, max) {
+      while (true) {
+        // Формула для випадкового цілого числа між min та max
+        yield Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+    }
+
+    let minVal = Number(prompt("Введіть мінімальне значення:"));
+    let maxVal = Number(prompt("Введіть максимальне значення:"));
+
+    const gen = randomGenerator(minVal, maxVal);
+    const btn = document.getElementById("next");
+    const out = document.getElementById("out");
+
+    btn.addEventListener("click", () => {
+      let nextNum = gen.next().value;
+      out.innerHTML += `<p>Згенеровано: ${nextNum}</p>`;
+    });
+  </script>
+</body>
+</html>
