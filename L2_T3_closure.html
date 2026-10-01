@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Завдання 3 - Замикання</title>
+</head>
+<body>
+  <p>Відкрийте консоль (F12), щоб побачити роботу лічильника.</p>
+  <script>
+    function createClickCounter() {
+      let count = 0; // Змінна зберігається у замиканні
+      
+      return function() {
+        count++;
+        console.log(`Поточне значення лічильника: ${count}`);
+      };
+    }
+
+    const myCounter = createClickCounter();
+    
+    // Викликаємо кілька разів для демонстрації
+    myCounter(); // 1
+    myCounter(); // 2
+    myCounter(); // 3
+  </script>
+</body>
+</html>
