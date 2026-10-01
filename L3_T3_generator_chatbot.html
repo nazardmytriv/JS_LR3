@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Завдання 3 - Чат-бот</title>
+</head>
+<body>
+  <script>
+    function* chatBot() {
+      let name = yield "Hi! What is your name?";
+      yield `Nice to meet you, ${name}! How are you?`;
+      return "Goodbye!"; // Останнє повідомлення
+    }
+
+    const bot = chatBot();
+    
+    // Крок 1: Бот питає ім'я
+    let botQuestion1 = bot.next().value;
+    let userName = prompt(botQuestion1);
+    
+    // Крок 2: Передаємо ім'я, бот питає "як справи?"
+    let botQuestion2 = bot.next(userName).value;
+    prompt(botQuestion2); // Відповідь користувача тут не зберігаємо, просто запитуємо
+    
+    // Крок 3: Бот прощається (це вже return)
+    let botQuestion3 = bot.next().value;
+    alert(botQuestion3);
+  </script>
+</body>
+</html>
