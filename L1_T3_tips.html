@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Завдання 3 - Чайові</title>
+</head>
+<body>
+  <script>
+    function calculateTip(amount, percent = 10) {
+      return (amount * percent) / 100;
+    }
+
+    function showResult(amount, tip) {
+      let total = amount + tip;
+      alert(`Bill: ${amount} грн\nTip (10%): ${tip} грн\nTotal: ${total} грн`);
+    }
+
+    let billAmount = Number(prompt("Введіть суму рахунку (грн):"));
+    let tipAmount = calculateTip(billAmount); // percent береться за замовчуванням 10
+    showResult(billAmount, tipAmount);
+  </script>
+</body>
+</html>
