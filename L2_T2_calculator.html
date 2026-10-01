@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Завдання 2 - Калькулятор</title>
+</head>
+<body>
+  <script>
+    function calculate(a, b, operation) {
+      switch (operation) {
+        case '+': return a + b;
+        case '-': return a - b;
+        case '*': return a * b;
+        case '/': 
+            if (b === 0) return "Ділення на нуль!";
+            return a / b;
+        default: return 'Invalid operation';
+      }
+    }
+
+    function showResult() {
+      let num1 = Number(prompt("Перше число:"));
+      let num2 = Number(prompt("Друге число:"));
+      let op = prompt("Операція (+, -, *, /):");
+      
+      let res = calculate(num1, num2, op);
+      alert(`Результат: ${res}`);
+    }
+
+    showResult();
+  </script>
+</body>
+</html>
